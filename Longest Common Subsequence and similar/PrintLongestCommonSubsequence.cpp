@@ -31,6 +31,7 @@ string printLCS(string X,string Y,int n,int m){
 				j--;
 		}
 	}
+	reverse(ans.begin(),ans.end());
 	return ans;
 }
 
