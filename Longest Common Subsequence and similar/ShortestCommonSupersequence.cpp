@@ -1,6 +1,6 @@
 
-//n is length of x and m is length of y
-int LongestCommonSubsequence(string x,string y,int n,int m){
+//length of X is n and length of Y is m
+void LongestCommonSubsequence(string X,string Y,int n,int m){
 	int dp[n+1][m+1];
 	for(int i=0;i<=n;i++){
 		for(int j=0;j<=m;j++){
@@ -17,3 +17,7 @@ int LongestCommonSubsequence(string x,string y,int n,int m){
 	return dp[n][m];
 }
 
+int ShortestCommonSupersequence(string X,string Y,int n,int m){
+	int lcs=LongestCommonSubsequence(X,Y,n,m);
+	return (n+m-lcs);
+}

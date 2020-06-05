@@ -1,6 +1,6 @@
 
 //n is length of x and m is length of y
-int LongestCommonSubsequence(string x,string y,int n,int m){
+int LCS(string x,string y,int n,int m){
 	int dp[n+1][m+1];
 	for(int i=0;i<=n;i++){
 		for(int j=0;j<=m;j++){
@@ -17,3 +17,8 @@ int LongestCommonSubsequence(string x,string y,int n,int m){
 	return dp[n][m];
 }
 
+int LPS(string a,int n){
+	string b=reverse(a.begin(),a.end());
+	int m=b.length();
+	return LCS(a,b,n,m);
+}
