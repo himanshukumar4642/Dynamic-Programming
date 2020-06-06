@@ -16,20 +16,29 @@ void LongestCommonSubsequence(string x,string y,int n,int m){
 	}
 }
 
-string printLCS(string X,string Y,int n,int m){
+string printSCS(string x,string y,int n,int m){
+	LCS(x,y,n,m);
 	int i=n,j=m;
 	string ans="";
 	while(i>0 && j>0){
-		if(X[i-1]==Y[j-1]){
-			ans+=X[i-1];
-			i--;
-			j--;
+		if(x[i-1]==y[j-1]){
+			ans+=x[i-1];
+			i--;j--;
 		}else{
-			if(dp[i-1][j]>dp[i][j-1])
+			if(dp[i-1][j]>dp[i][j-1]){
+				ans+=x[i-1];
 				i--;
-			else
+			}else{
+				ans+=y[j-1];
 				j--;
+			}
 		}
+	}
+	while(i--){
+		ans+=x[i];
+	}
+	while(j--){
+		ans+=y[j];
 	}
 	reverse(ans.begin(),ans.end());
 	return ans;

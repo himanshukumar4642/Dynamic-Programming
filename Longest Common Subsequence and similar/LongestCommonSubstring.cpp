@@ -1,6 +1,6 @@
 
 
-int LongestCommonSubstring(string X,string Y,int n,int m){
+int LongestCommonSubstring(string x,string y,int n,int m){
 	int dp[n+1][m+1];
 	int ans=0;
 	for(int i=0;i<=n;i++){
